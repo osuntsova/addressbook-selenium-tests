@@ -5,7 +5,6 @@
     <classes>
       <class name="com.example.tests.AddContactTest">
         <methods>
-          <include name="tearDown"/>
           <include name="AddEmptyContactTest"/>
           <include name="setUp"/>
         </methods>

@@ -95,6 +95,10 @@ public class TestBase {
 	    driver.findElement(By.name("phone2")).clear();
 	    driver.findElement(By.name("phone2")).sendKeys(contact.sec_home_phone);
 	}
+	protected void unfillContactForm(ContactData contact) {
+		 new Select(driver.findElement(By.name("bday"))).deselectByVisibleText(contact.day_of_birth);
+		 new Select(driver.findElement(By.name("bmonth"))).deselectByVisibleText(contact.mon_of_birth);
+	}
 
 	protected void submitCreation() {
 		// submit group creation

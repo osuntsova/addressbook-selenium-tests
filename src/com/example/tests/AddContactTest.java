@@ -61,6 +61,7 @@ public class AddContactTest extends TestBase {
 	contact.second_address = "";
 	contact.sec_home_phone = "";
 	fillContactForm(contact);
+	unfillContactForm (contact);
 	submitCreation();
 }
 }
