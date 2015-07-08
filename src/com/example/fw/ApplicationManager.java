@@ -32,81 +32,81 @@ public class ApplicationManager {
 
 	public void gotoGroupsPage(TestBase testBase) {
 		// open group page
-	    testBase.driver.findElement(By.linkText("groups")).click();
+	    driver.findElement(By.linkText("groups")).click();
 	}
 
 	public void initGroupCreation(TestBase testBase) {
 		// init new group creation
-	    testBase.driver.findElement(By.name("new")).click();
+	    driver.findElement(By.name("new")).click();
 	}
 
 	public void fillGroupForm(TestBase testBase, GroupData group) {
 		// fill new form
-	    testBase.driver.findElement(By.name("group_name")).clear();
-	    testBase.driver.findElement(By.name("group_name")).sendKeys(group.name);
-	    testBase.driver.findElement(By.name("group_header")).clear();
-	    testBase.driver.findElement(By.name("group_header")).sendKeys(group.header);
-	    testBase.driver.findElement(By.name("group_footer")).clear();
-	    testBase.driver.findElement(By.name("group_footer")).sendKeys(group.footer);
+	    driver.findElement(By.name("group_name")).clear();
+	    driver.findElement(By.name("group_name")).sendKeys(group.name);
+	    driver.findElement(By.name("group_header")).clear();
+	    driver.findElement(By.name("group_header")).sendKeys(group.header);
+	    driver.findElement(By.name("group_footer")).clear();
+	    driver.findElement(By.name("group_footer")).sendKeys(group.footer);
 	}
 
 	public void returnToGroupsPage(TestBase testBase) {
 		// return to groups page
-	    testBase.driver.findElement(By.linkText("group page")).click();
+	    driver.findElement(By.linkText("group page")).click();
 	}
 
 	public void initContactCreation(TestBase testBase) {
 		//init new contact creation
-		testBase.driver.findElement(By.linkText("add new")).click();
+		driver.findElement(By.linkText("add new")).click();
 		}
 
 	public void fillContactForm(TestBase testBase, ContactData contact) {
 		// fill new contact form
-	    testBase.driver.findElement(By.name("firstname")).clear();
-	    testBase.driver.findElement(By.name("firstname")).sendKeys(contact.first_name);
-	    testBase.driver.findElement(By.name("lastname")).clear();
-	    testBase.driver.findElement(By.name("lastname")).sendKeys(contact.second_name);
-	    testBase.driver.findElement(By.name("address")).clear();
-	    testBase.driver.findElement(By.name("address")).sendKeys(contact.address);
-	    testBase.driver.findElement(By.name("home")).clear();
-	    testBase.driver.findElement(By.name("home")).sendKeys(contact.home_phone);
-	    testBase.driver.findElement(By.name("mobile")).clear();
-	    testBase.driver.findElement(By.name("mobile")).sendKeys(contact.mobile_phone);
-	    testBase.driver.findElement(By.name("work")).clear();
-	    testBase.driver.findElement(By.name("work")).sendKeys(contact.work_phone);
-	    testBase.driver.findElement(By.name("email")).clear();
-	    testBase.driver.findElement(By.name("email")).sendKeys(contact.email);
-	    testBase.driver.findElement(By.name("email2")).clear();
-	    testBase.driver.findElement(By.name("email2")).sendKeys(contact.second_email);
-	    new Select(testBase.driver.findElement(By.name("bday"))).selectByVisibleText(contact.day_of_birth);
-	    new Select(testBase.driver.findElement(By.name("bmonth"))).selectByVisibleText(contact.mon_of_birth);
-	    testBase.driver.findElement(By.name("byear")).clear();
-	    testBase.driver.findElement(By.name("byear")).sendKeys(contact.year_of_birth);
-	    new Select(testBase.driver.findElement(By.name("new_group"))).selectByVisibleText(contact.in_group);
-	    testBase.driver.findElement(By.name("address2")).clear();
-	    testBase.driver.findElement(By.name("address2")).sendKeys(contact.second_address);
-	    testBase.driver.findElement(By.name("phone2")).clear();
-	    testBase.driver.findElement(By.name("phone2")).sendKeys(contact.sec_home_phone);
+	    driver.findElement(By.name("firstname")).clear();
+	    driver.findElement(By.name("firstname")).sendKeys(contact.first_name);
+	    driver.findElement(By.name("lastname")).clear();
+	    driver.findElement(By.name("lastname")).sendKeys(contact.second_name);
+	    driver.findElement(By.name("address")).clear();
+	    driver.findElement(By.name("address")).sendKeys(contact.address);
+	    driver.findElement(By.name("home")).clear();
+	    driver.findElement(By.name("home")).sendKeys(contact.home_phone);
+	    driver.findElement(By.name("mobile")).clear();
+	    driver.findElement(By.name("mobile")).sendKeys(contact.mobile_phone);
+	    driver.findElement(By.name("work")).clear();
+	    driver.findElement(By.name("work")).sendKeys(contact.work_phone);
+	    driver.findElement(By.name("email")).clear();
+	    driver.findElement(By.name("email")).sendKeys(contact.email);
+	    driver.findElement(By.name("email2")).clear();
+	    driver.findElement(By.name("email2")).sendKeys(contact.second_email);
+	    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(contact.day_of_birth);
+	    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(contact.mon_of_birth);
+	    driver.findElement(By.name("byear")).clear();
+	    driver.findElement(By.name("byear")).sendKeys(contact.year_of_birth);
+	    new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contact.in_group);
+	    driver.findElement(By.name("address2")).clear();
+	    driver.findElement(By.name("address2")).sendKeys(contact.second_address);
+	    driver.findElement(By.name("phone2")).clear();
+	    driver.findElement(By.name("phone2")).sendKeys(contact.sec_home_phone);
 	}
 
 	public void submitCreation(TestBase testBase) {
 		// submit group creation
-	    testBase.driver.findElement(By.name("submit")).click();
+	    driver.findElement(By.name("submit")).click();
 	}
 
 	public void unfillContactForm(TestBase testBase, ContactData contact) {
-		 new Select(testBase.driver.findElement(By.name("bday"))).deselectByVisibleText(contact.day_of_birth);
-		 new Select(testBase.driver.findElement(By.name("bmonth"))).deselectByVisibleText(contact.mon_of_birth);
+		 new Select(driver.findElement(By.name("bday"))).deselectByVisibleText(contact.day_of_birth);
+		 new Select(driver.findElement(By.name("bmonth"))).deselectByVisibleText(contact.mon_of_birth);
 	}
 
 	public void openMainPage(TestBase testBase) {
 		// open main page
-	    testBase.driver.get(testBase.baseUrl + "/addressbookv4.1.4/");
+	    driver.get(testBase.baseUrl + "/addressbookv4.1.4/");
 	}
 
 	public boolean isElementPresent(TestBase testBase, By by) {
 	    try {
-	      testBase.driver.findElement(by);
+	     driver.findElement(by);
 	      return true;
 	    } catch (NoSuchElementException e) {
 	      return false;
@@ -115,7 +115,7 @@ public class ApplicationManager {
 
 	public boolean isAlertPresent(TestBase testBase) {
 	    try {
-	      testBase.driver.switchTo().alert();
+	      driver.switchTo().alert();
 	      return true;
 	    } catch (NoAlertPresentException e) {
 	      return false;
@@ -124,16 +124,16 @@ public class ApplicationManager {
 
 	public String closeAlertAndGetItsText(TestBase testBase) {
 	    try {
-	      Alert alert = testBase.driver.switchTo().alert();
+	      Alert alert = driver.switchTo().alert();
 	      String alertText = alert.getText();
-	      if (testBase.acceptNextAlert) {
+	      if (acceptNextAlert) {
 	        alert.accept();
 	      } else {
 	        alert.dismiss();
 	      }
 	      return alertText;
 	    } finally {
-	      testBase.acceptNextAlert = true;
+	      acceptNextAlert = true;
 	    }
 	  }
 
