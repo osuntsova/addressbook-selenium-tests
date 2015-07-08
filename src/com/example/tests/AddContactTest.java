@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.Select;
 public class AddContactTest extends TestBase {
 	
 	
-/*  @Test
+  @Test
   public void AddNotEmptyContactTest() throws Exception {
-	openMainPage();
-    initContactCreation();
+	app.openMainPage(this);
+    app.initContactCreation(this);
     ContactData contact = new ContactData();
     contact.first_name = "First_name 1";
 	contact.second_name = "Second_name 1";
@@ -29,19 +29,11 @@ public class AddContactTest extends TestBase {
 	contact.in_group = "Group 1";
 	contact.second_address = "Address 2";
 	contact.sec_home_phone = "сколько ж на форме телефонов...";
-	fillContactForm(contact);
-	submitCreation();
-}*/
-  
-//  @Test
-//  public void AddEmptyContactTest() throws Exception {
-//	openMainPage();
- //   initContactCreation();
- //   fillContactForm(new ContactData("", "", "", "", "", "", "", "", "", "", "", "", "", ""));
-//	submitCreation();
-//}
+	app.fillContactForm(this, contact);
+	app.submitCreation(this);
+}
 
-  @Test
+  /*@Test
   public void AddEmptyContactTest() throws Exception {
 	openMainPage();
     initContactCreation();
@@ -54,8 +46,8 @@ public class AddContactTest extends TestBase {
 	contact.work_phone = "";
 	contact.email = "";
 	contact.second_email = "";
-	contact.day_of_birth = "";
-	contact.mon_of_birth = "";
+	contact.day_of_birth = "13";
+	contact.mon_of_birth = "June";
 	contact.year_of_birth = "";
 	contact.in_group = "";
 	contact.second_address = "";
@@ -63,6 +55,6 @@ public class AddContactTest extends TestBase {
 	fillContactForm(contact);
 	unfillContactForm (contact);
 	submitCreation();
-}
+}*/
 }
  
