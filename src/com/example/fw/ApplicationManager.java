@@ -1,16 +1,34 @@
 package com.example.fw;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.example.tests.ContactData;
 import com.example.tests.GroupData;
 import com.example.tests.TestBase;
 
+
+public static WebDriver driver;
+public static String baseUrl;
+public static boolean acceptNextAlert = true;
+private static StringBuffer verificationErrors = new StringBuffer();
+
 public class ApplicationManager {
+	
+	public ApplicationManager (){
+		driver = new FirefoxDriver(); // initialization with class constructor 
+	    // = create new object "FirefoxDriver" and put it in var "driver"
+	    baseUrl = "http://localhost/";
+	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
 
 	public void gotoGroupsPage(TestBase testBase) {
 		// open group page
@@ -118,5 +136,14 @@ public class ApplicationManager {
 	      testBase.acceptNextAlert = true;
 	    }
 	  }
+
+	public void stop() {
+		// TODO Auto-generated method stub
+		driver.quit();
+	    String verificationErrorString = verificationErrors.toString();
+	    if (!"".equals(verificationErrorString)) {
+	      Assert.fail(verificationErrorString);
+	    }
+	}
 
 }
