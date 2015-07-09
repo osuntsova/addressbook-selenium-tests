@@ -16,12 +16,15 @@ import com.example.tests.GroupData;
 import com.example.tests.TestBase;
 
 
-public static WebDriver driver;
-public static String baseUrl;
-public static boolean acceptNextAlert = true;
-private static StringBuffer verificationErrors = new StringBuffer();
 
 public class ApplicationManager {
+	
+
+	public static WebDriver driver;
+	public static String baseUrl;
+	public static boolean acceptNextAlert = true;
+	private static StringBuffer verificationErrors = new StringBuffer();
+	
 	
 	public ApplicationManager (){
 		driver = new FirefoxDriver(); // initialization with class constructor 
@@ -101,7 +104,7 @@ public class ApplicationManager {
 
 	public void openMainPage(TestBase testBase) {
 		// open main page
-	    driver.get(testBase.baseUrl + "/addressbookv4.1.4/");
+	    driver.get(baseUrl + "/addressbookv4.1.4/");
 	}
 
 	public boolean isElementPresent(TestBase testBase, By by) {
