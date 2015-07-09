@@ -1,35 +1,31 @@
 package com.example.tests;
 
 import org.testng.annotations.Test;
-import java.util.regex.Pattern;
-import static org.hamcrest.CoreMatchers.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.Select;
 
 
 public class GroupCreationTests extends TestBase {
 	
   @Test
   public void testNonEmptyGroupCreation() throws Exception {
-	app.openMainPage(this);
-    app.gotoGroupsPage(this);
-    app.initGroupCreation(this);
+	app.navigationHelper.openMainPage();
+    app.groupHelper.gotoGroupsPage();
+    app.groupHelper.initGroupCreation();
     GroupData group = new GroupData();
     group.name = "group name 1";
     group.header = "header 1";
     group.footer = "footer 1";
-	app.fillGroupForm(this, group);
-    app.submitCreation(this);
-    app.returnToGroupsPage(this);
+	app.groupHelper.fillGroupForm(app, group);
+    app.navigationHelper.submitCreation();
+    app.groupHelper.returnToGroupsPage();
   }
 
   @Test
   public void testEmptyGroupCreation() throws Exception {
-	app.openMainPage(this);
-    app.gotoGroupsPage(this);
-    app.initGroupCreation(this);
-    app.fillGroupForm(this, new GroupData("", "", ""));
-    app.submitCreation(this);
-    app.returnToGroupsPage(this);
+	app.navigationHelper.openMainPage();
+    app.groupHelper.gotoGroupsPage();
+    app.groupHelper.initGroupCreation();
+    app.groupHelper.fillGroupForm(app, new GroupData("", "", ""));
+    app.navigationHelper.submitCreation();
+    app.groupHelper.returnToGroupsPage();
   }
 }

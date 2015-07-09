@@ -19,7 +19,9 @@ import com.example.tests.TestBase;
 
 public class ApplicationManager {
 	
-
+	public NavigationHelper navigationHelper;
+	
+	
 	public static WebDriver driver;
 	public static String baseUrl;
 	public static boolean acceptNextAlert = true;
@@ -33,17 +35,17 @@ public class ApplicationManager {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
-	public void gotoGroupsPage(TestBase testBase) {
+	public void gotoGroupsPage() {
 		// open group page
 	    driver.findElement(By.linkText("groups")).click();
 	}
 
-	public void initGroupCreation(TestBase testBase) {
+	public void initGroupCreation() {
 		// init new group creation
 	    driver.findElement(By.name("new")).click();
 	}
 
-	public void fillGroupForm(TestBase testBase, GroupData group) {
+	public void fillGroupForm(GroupData group) {
 		// fill new form
 	    driver.findElement(By.name("group_name")).clear();
 	    driver.findElement(By.name("group_name")).sendKeys(group.name);
@@ -53,17 +55,17 @@ public class ApplicationManager {
 	    driver.findElement(By.name("group_footer")).sendKeys(group.footer);
 	}
 
-	public void returnToGroupsPage(TestBase testBase) {
+	public void returnToGroupsPage() {
 		// return to groups page
 	    driver.findElement(By.linkText("group page")).click();
 	}
 
-	public void initContactCreation(TestBase testBase) {
+	public void initContactCreation() {
 		//init new contact creation
 		driver.findElement(By.linkText("add new")).click();
 		}
 
-	public void fillContactForm(TestBase testBase, ContactData contact) {
+	public void fillContactForm(ContactData contact) {
 		// fill new contact form
 	    driver.findElement(By.name("firstname")).clear();
 	    driver.findElement(By.name("firstname")).sendKeys(contact.first_name);
@@ -92,22 +94,17 @@ public class ApplicationManager {
 	    driver.findElement(By.name("phone2")).sendKeys(contact.sec_home_phone);
 	}
 
-	public void submitCreation(TestBase testBase) {
+	public void submitCreation() {
 		// submit group creation
 	    driver.findElement(By.name("submit")).click();
 	}
 
-	public void unfillContactForm(TestBase testBase, ContactData contact) {
+	public void unfillContactForm(ContactData contact) {
 		 new Select(driver.findElement(By.name("bday"))).deselectByVisibleText(contact.day_of_birth);
 		 new Select(driver.findElement(By.name("bmonth"))).deselectByVisibleText(contact.mon_of_birth);
 	}
 
-	public void openMainPage(TestBase testBase) {
-		// open main page
-	    driver.get(baseUrl + "/addressbookv4.1.4/");
-	}
-
-	public boolean isElementPresent(TestBase testBase, By by) {
+	public boolean isElementPresent(By by) {
 	    try {
 	     driver.findElement(by);
 	      return true;
@@ -116,7 +113,7 @@ public class ApplicationManager {
 	    }
 	  }
 
-	public boolean isAlertPresent(TestBase testBase) {
+	public boolean isAlertPresent() {
 	    try {
 	      driver.switchTo().alert();
 	      return true;
@@ -125,7 +122,7 @@ public class ApplicationManager {
 	    }
 	  }
 
-	public String closeAlertAndGetItsText(TestBase testBase) {
+	public String closeAlertAndGetItsText() {
 	    try {
 	      Alert alert = driver.switchTo().alert();
 	      String alertText = alert.getText();
