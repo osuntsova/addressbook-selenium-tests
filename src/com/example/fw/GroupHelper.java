@@ -15,7 +15,7 @@ public class GroupHelper extends HelperBase{
 	    driver.findElement(By.name("new")).click();
 	}
 
-	public void fillGroupForm(ApplicationManager applicationManager, GroupData group) {
+	public void fillGroupForm(GroupData group) {
 		// fill new form
 	    driver.findElement(By.name("group_name")).clear();
 	    driver.findElement(By.name("group_name")).sendKeys(group.name);
