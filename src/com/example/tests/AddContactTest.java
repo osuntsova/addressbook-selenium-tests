@@ -25,7 +25,7 @@ public class AddContactTest extends TestBase {
 	contact.sec_home_phone = "сколько ж на форме телефонов...";
 	app.getNavigationHelper().openMainPage();
     app.getContactHelper().initContactCreation();
-	app.getContactHelper().fillContactForm(app, this, contact);
+	app.getContactHelper().fillContactForm(contact);
 	app.getNavigationHelper().submitCreation();
 }
 

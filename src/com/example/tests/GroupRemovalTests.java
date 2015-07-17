@@ -8,7 +8,8 @@ public class GroupRemovalTests extends TestBase{
 	public void deleteSomeGroup() {
 		app.getNavigationHelper().openMainPage();
 		app.getNavigationHelper().gotoGroupsPage();
-		app.getGroupHelper().deleteGroup();
+		app.getGroupHelper().deleteGroup(1);
+		app.getGroupHelper().returnToGroupsPage();
 	}
 		
 	

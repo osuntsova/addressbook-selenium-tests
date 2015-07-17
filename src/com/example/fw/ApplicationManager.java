@@ -13,7 +13,7 @@ public class ApplicationManager {
 	public String baseUrl;
 	
 	private NavigationHelper navigationHelper;
-	private HelperBase groupHelper;
+	private GroupHelper groupHelper;
 	private ContactHelper contactHelper;
 		
 	
@@ -35,21 +35,22 @@ public class ApplicationManager {
 		driver.quit();
 	}
 
-	public NavigationHelper getNavigationHepler (){
+	public NavigationHelper getNavigationHelper (){
 	if (navigationHelper == null){
 		navigationHelper = new NavigationHelper (this);
 		} return navigationHelper;
 	}
 	
-	public HelperBase getGroupHepler (){
+	public GroupHelper getGroupHelper (){
 		if (groupHelper == null){
 			groupHelper = new GroupHelper (this);
 			} return groupHelper;
 		}
 	
-	public ContactHelper getContactHepler (){
+	public ContactHelper getContactHelper (){
 		if (contactHelper == null){
 			contactHelper = new ContactHelper (this);
 			} return contactHelper;
 		}
-}
+
+	}
