@@ -6,22 +6,18 @@ public class NavigationHelper extends HelperBase{
 
 	public NavigationHelper(ApplicationManager manager) {
 		super(manager);
-		// TODO Auto-generated constructor stub
-	}
+		}
 	
 	public void openMainPage() {
-		// open main page
-	    driver.get(manager.baseUrl + "/addressbookv4.1.4/");
+		driver.get(manager.baseUrl + "/addressbookv4.1.4/");
 	}
 	
 	public void gotoGroupsPage() {
-		// open group page
-	    driver.findElement(By.linkText("groups")).click();
+		click(By.linkText("groups"));
 	}
 
 	public void submitCreation() {
-		// submit group creation
-	    driver.findElement(By.name("submit")).click();
+		click(By.name("submit"));
 	}
 
 }
